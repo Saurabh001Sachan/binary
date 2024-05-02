@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        justify-content: center;
+        background: blue;
+    }
+    .container{
+        width: 500px;
+        height: 500px;
+        background: black;
+        margin-top: 10px;
+        margin-left: 10px;
+        padding: 10px;
+        text-align: center;
+        float: left;
+    }
+    h2{
+        padding: 5px;
+        color: white;
+        text-decoration: underline;
+        margin-bottom: 10px;
+    }
+    input{
+        border: none;
+        outline: none;
+        color: white;
+        background: orange;
+        padding: 5px;
+        cursor: pointer;
+    }
+    input[type=text]{
+        background: white;
+        color: black;
+        cursor: text;
+    }
+    input[type=button]:hover{
+        background: brown;
+        width: 70px;
+        transition: 0.4s;
+    }
+    .in{
+        width: 100%;
+        height: 100px;
+        background: rgb(97, 97, 97);
+        margin-top: 10px;
+        color: white;
+        font-weight: bolder;
+        font-size: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>
+<body>
+   <div class="container">
+    <h2>Binary To Decimal</h2>
+    <input id="bi" type="text">
+    <input id="b" type="button" value="Convert">
+    <p class="in d">Binary Numbers</p>
+   </div> 
+  <div class="container">
+    <h2>Decimal To Binary</h2>
+    <input id="di" type="text">
+    <input id="d" type="button" value="Convert">
+    <p class="in b">Decimal Numbers</p>
+  </div>
+  <script>
+    var d = document.querySelector('#d');
+    var b = document.querySelector('#b');
+
+    b.onclick = function(){
+        var vl = document.querySelector(' #bi ').value;
+         document.querySelector('.d ').innerHTML = parseInt(vl,2).toString(10)
+    }
+
+    d.onclick = function(){
+        var vl = document.querySelector(' #di ').value;
+         document.querySelector('.b ').innerHTML = ( vl>>>0 ).toString(2)
+    }
+  </script>
+</body>
+</html>
